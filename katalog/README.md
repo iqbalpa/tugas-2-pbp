@@ -1,8 +1,9 @@
-# Live Demo
+# Live Demo 🚀
 [Home page](https://iqbal-tugas-2.herokuapp.com/)
+
 [Katalog page](https://iqbal-tugas-2.herokuapp.com/katalog/)
 
-# Bagan request client
+## Bagan request client
 
 
 ## Kenapa menggunakan virtual environtment?
