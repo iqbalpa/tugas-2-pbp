@@ -4,7 +4,7 @@
 [Katalog page 📃](https://iqbal-tugas-2.herokuapp.com/katalog/)
 
 ## Bagan request client
-
+![alt text](./assets/bagan.svg "bagan-image")
 
 ## Kenapa menggunakan virtual environtment?
 - Jawaban simpelnya adalah karena menggunakan virtual environtment adalah _best practice_ untuk django. Kalau jawaban yang sebenarnya, menurut saya kita menggunakan virtual environtment agar saat kita menginstall packages dan dependencies yang diperlukan dalam aplikasi django tidak terinstall secara global di lokal, namun hanya terinstall pada folder/direktori yang kita inginkan (dan hanya bisa diakses dari folder/direktori tersebut).
