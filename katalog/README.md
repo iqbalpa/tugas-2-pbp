@@ -1,5 +1,6 @@
 # Live Demo
-[Tugas 2 PBP](link)
+[Home page](https://iqbal-tugas-2.herokuapp.com/)
+[Katalog page](https://iqbal-tugas-2.herokuapp.com/katalog/)
 
 # Bagan request client
 
