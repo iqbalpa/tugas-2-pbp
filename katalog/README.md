@@ -1,7 +1,7 @@
-# Live Demo 🚀
-[Home page](https://iqbal-tugas-2.herokuapp.com/)
+# Live Demo Link 🚀
+[Home page 🏠](https://iqbal-tugas-2.herokuapp.com/)
 
-[Katalog page](https://iqbal-tugas-2.herokuapp.com/katalog/)
+[Katalog page 📃](https://iqbal-tugas-2.herokuapp.com/katalog/)
 
 ## Bagan request client
 
