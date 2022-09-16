@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 1,
+        "fields":{
+            "watched": true,
+            "title":"Shawshank Redemption",
+            "rating": 5,
+            "release_date": "1994-09-23",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 2,
+        "fields":{
+            "watched": false,
+            "title":"The Godfather",
+            "rating": 5,
+            "release_date": "1972-03-24",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 3,
+        "fields":{
+            "watched": false,
+            "title":"The Dark Knight",
+            "rating": 5,
+            "release_date": "2008-07-18",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 4,
+        "fields":{
+            "watched": false,
+            "title":"The Godfather: Part II",
+            "rating": 5,
+            "release_date": "1974-12-20",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 5,
+        "fields":{
+            "watched": false,
+            "title":"The Lord of the Rings: The Return of the King",
+            "rating": 5,
+            "release_date": "2003-12-01",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 6,
+        "fields":{
+            "watched": false,
+            "title":"Pulp Fiction",
+            "rating": 5,
+            "release_date": "1994-10-14",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 7,
+        "fields":{
+            "watched": false,
+            "title":"Schindler's List",
+            "rating": 5,
+            "release_date": "1993-11-30",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 8,
+        "fields":{
+            "watched": false,
+            "title":"The Good, the Bad and the Ugly",
+            "rating": 5,
+            "release_date": "1966-12-23",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 9,
+        "fields":{
+            "watched": false,
+            "title":"The Lord of the Rings: The Fellowship of the Ring",
+            "rating": 5,
+            "release_date": "2001-12-19",
+            "review":"This is a great movie"
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "id": 10,
+        "fields":{
+            "watched": false,
+            "title":"Fight Club",
+            "rating": 5,
+            "release_date": "1999-10-15",
+            "review":"This is a great movie"
+        }
+    }
+]
