@@ -2,6 +2,26 @@
 
  {% block content %}
 
-  <h1>halo ini dari mywatchlist</h1>
+  <h1>Tugas 3 PBP</h1>
+  <h2>My Watch List</h2>
+
+  <table>
+    <tr>
+        <th>TITLE</th>
+        <th>RELEASE DATE</th>
+        <th>RATING</th>
+        <th>REVIEW</th>
+        <th>WATCHED</th>
+    </tr>
+    {% for movie in watchlist %}
+    <tr>
+        <th>{{movie.title}}</th>
+        <th>{{movie.release_date}}</th>
+        <th>{{movie.rating}}</th>
+        <th>{{movie.review}}</th>
+        <th>{{movie.watched}}</th>
+    </tr>
+    {% endfor %}
+  </table>
 
  {% endblock content %}

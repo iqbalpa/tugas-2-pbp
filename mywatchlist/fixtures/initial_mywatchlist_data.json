@@ -1,7 +1,7 @@
 [
     {
-        "model": "mywatchlist.watchlist",
-        "id": 1,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 1,
         "fields":{
             "watched": true,
             "title":"Shawshank Redemption",
@@ -11,8 +11,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 2,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 2,
         "fields":{
             "watched": false,
             "title":"The Godfather",
@@ -22,8 +22,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 3,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 3,
         "fields":{
             "watched": false,
             "title":"The Dark Knight",
@@ -33,8 +33,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 4,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 4,
         "fields":{
             "watched": false,
             "title":"The Godfather: Part II",
@@ -44,8 +44,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 5,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 5,
         "fields":{
             "watched": false,
             "title":"The Lord of the Rings: The Return of the King",
@@ -55,8 +55,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 6,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 6,
         "fields":{
             "watched": false,
             "title":"Pulp Fiction",
@@ -66,8 +66,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 7,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 7,
         "fields":{
             "watched": false,
             "title":"Schindler's List",
@@ -77,8 +77,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 8,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 8,
         "fields":{
             "watched": false,
             "title":"The Good, the Bad and the Ugly",
@@ -88,8 +88,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 9,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 9,
         "fields":{
             "watched": false,
             "title":"The Lord of the Rings: The Fellowship of the Ring",
@@ -99,8 +99,8 @@
         }
     },
     {
-        "model": "mywatchlist.watchlist",
-        "id": 10,
+        "model": "mywatchlist.mywatchlist",
+        "pk": 10,
         "fields":{
             "watched": false,
             "title":"Fight Club",

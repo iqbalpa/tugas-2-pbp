@@ -1,7 +1,11 @@
 # import httpresponse
-from django.http import HttpResponse
 from django.shortcuts import render
+from mywatchlist.models import MyWatchList
 
 # Create your views here.
 def show_mywatchlist(request):
-    return render(request, 'mywatchlist.html')
+    mywatchlist = MyWatchList.objects.all()
+    context = {
+        "watchlist": mywatchlist
+    }
+    return render(request, 'mywatchlist.html', context)
