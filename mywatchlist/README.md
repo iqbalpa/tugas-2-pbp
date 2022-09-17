@@ -22,13 +22,13 @@ Pada umumnya, software atau pun aplikasi terdiri atas dua bagian, yaitu frontend
 
 ## Cara mengimplementasikan poin 1 sampai 3
 1. Membuat class Model pada models.py untuk template data fields yang akan disimpan pada database. Dalam hal ini, class MyWatchList memiliki lima fields, yaitu watched, title, rating, release_date, dan review. Kemudian buat data dummy pada fixtures/initial_mywatchlist_data.json untuk di-load dan ditampilkan pada URL yang diminta.
-2. Mengimplementasikan fungsi untuk menampilkan data pada HTML, JSON, dan XML pada views.py. Fungsi tersebut akan memanggil data dari dummy data dan mengembalikan data tersebut dalam bentuk HTML, JSON, atau XML. Serta menambahkan path yang sesuai pada urls.py agar dapat diakses melalui link yang sesuai.
-3. 
+2. Mengimplementasikan fungsi untuk menampilkan data pada HTML, JSON, dan XML pada views.py. Fungsi tersebut akan memanggil data dari dummy data dan mengembalikan data tersebut dalam bentuk HTML, JSON, atau XML. Menggunakan method render untuk menampilkan data pada HTML dan menggunakan HttpResponse untuk mengirim data dalam bentuk JSON dan XML.
+3. Mengimplementasikan URL path di urls.py. /mywatchlist/html untuk HTML, /mywatchlist/json untuk JSON, dan /mywatchlist/xml untuk XML. Pengimplementasian path tersebut membutuhkan import method dari views.py yang telah dibuat pada poin 2.
 
 ## Screenshot POSTMAN
 1. /mywatchlist/html
-![alt text](link "html")
+![alt text](./assets/html.png "html")
 2. /mywatchlist/json
-![alt text](link "json")
+![alt text](./assets/json.png "json")
 3. /mywatchlist/xml
-![alt text](link "xml")
+![alt text](./assets/xml.png "xml")
