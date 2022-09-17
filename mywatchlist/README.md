@@ -1,9 +1,9 @@
 # Live Demo Link 🚀
-[HTML page 🏠](https://iqbal-tugas-2.herokuapp.com/mywatchlist/html/)
+[HTML page 💻](https://iqbal-tugas-2.herokuapp.com/mywatchlist/html/)
 
 [JSON page 📃](https://iqbal-tugas-2.herokuapp.com/mywatchlist/json/)
 
-[XML page 📃](https://iqbal-tugas-2.herokuapp.com/mywatchlist/xml/)
+[XML page 📄](https://iqbal-tugas-2.herokuapp.com/mywatchlist/xml/)
 
 
 ## Perbedaan JSON, XML, dan HTML
