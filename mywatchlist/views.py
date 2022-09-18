@@ -12,14 +12,15 @@ def show_mywatchlist(request):
     unwatched = 0
     message = ""
     for movie in mywatchlist:
-        if movie.watched == True:
+        if movie.watched:
             watched += 1
         else:
             unwatched += 1
+    print(watched)
     if watched >= unwatched:
         message = "Selamat, kamu sudah banyak menonton!"
     else:
-        message = "Selamat, kamu sudah banyak menonton!"
+        message = "Wah, kamu masih sedikit menonton!"
 
     context = {
         "watchlist": mywatchlist,
