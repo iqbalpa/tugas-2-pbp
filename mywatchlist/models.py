@@ -6,5 +6,5 @@ class MyWatchList(models.Model):
     watched = models.BooleanField() # true = sudah, false = belum
     title = models.CharField(max_length=255)
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-    release_date = models.DateTimeField()
+    release_date = models.DateField()
     review = models.TextField()
