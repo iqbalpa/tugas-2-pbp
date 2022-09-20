@@ -6,6 +6,9 @@ from django.core import serializers
 
 # Create your views here.
 def show_mywatchlist(request):
+    return HttpResponse("Tugas 3 PBP")
+    
+def show_mywatchlist_html(request):
     mywatchlist = MyWatchList.objects.all()
     
     watched = 0
