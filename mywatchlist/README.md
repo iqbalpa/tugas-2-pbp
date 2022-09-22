@@ -26,9 +26,15 @@ Pada umumnya, software atau pun aplikasi terdiri atas dua bagian, yaitu frontend
 3. Mengimplementasikan URL path di urls.py. /mywatchlist/html untuk HTML, /mywatchlist/json untuk JSON, dan /mywatchlist/xml untuk XML. Pengimplementasian path tersebut membutuhkan import method dari views.py yang telah dibuat pada poin 2.
 
 ## Screenshot POSTMAN
-1. /mywatchlist/html
+1. http://localhost:8000/mywatchlist/html
 ![alt text](./assets/html.png "html")
-2. /mywatchlist/json
+2. http://localhost:8000/mywatchlist/json
 ![alt text](./assets/json.png "json")
-3. /mywatchlist/xml
+3. http://localhost:8000/mywatchlist/xml
 ![alt text](./assets/xml.png "xml")
+4. https://iqbal-tugas-2.herokuapp.com/mywatchlist/html
+![alt text](./assets/html1.png "html")
+5. https://iqbal-tugas-2.herokuapp.com/mywatchlist/json
+![alt text](./assets/json1.png "json")
+6. https://iqbal-tugas-2.herokuapp.com/mywatchlist/xml
+![alt text](./assets/xml1.png "xml")
