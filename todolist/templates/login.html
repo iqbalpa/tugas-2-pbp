@@ -28,17 +28,9 @@
                 <td><input class="btn login_btn" type="submit" value="Login"></td>
             </tr>
         </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
+    </form>    
         
-    Belum mempunyai akun? <a href="{% url 'wishlist:register' %}">Buat Akun</a>
+    Belum mempunyai akun? <a href="{% url 'registrasi_user' %}">Buat Akun</a>
 
 </div>
 

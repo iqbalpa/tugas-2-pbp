@@ -3,9 +3,18 @@
  {% block content %}
 
   <h1>Tugas 4 PBP</h1>
-  <h3>Hi! Welcome {{username}}</h3>
+  <h3>Hi! Welcome </h3>
 
-  <button>Logout</button>
-  <button>Tambah Task Baru</button>
+  <a href="{% url 'logout_user' %}"><button>Logout</button></a>
+  <a href="{% url 'login_user' %}"><button>Tambah Task Baru</button></a>
+
+  <h2>TASKS</h2>
+  <table>
+    <tr>
+        <th>Judul</th>
+        <th>Deskripsi</th>
+        <th>Tanggal Pembuatan</th>
+    </tr>
+  </table>
 
  {% endblock content %}

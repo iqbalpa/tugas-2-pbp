@@ -8,8 +8,8 @@ from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 def show_todolist(request):
     username = None
-    if request.user.is_authenticated():
-        username = request.user.username
+    # if request.user.is_authenticated():
+    #     username = request.user.username
     context = { "username":username }
     return render(request, "todolist.html", context)
 

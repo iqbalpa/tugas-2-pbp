@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = "login">
+
+    <h1>Tambah Task Baru</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Judul: </td>
+                <td><input type="text" name="judul" placeholder="Judul" class="form-control"></td>
+            </tr>
+                    
+            <tr>
+                <td>Deskripsi: </td>
+                <td><input type="text" name="deksripsi" placeholder="Deskripsi" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input class="btn login_btn" type="submit" value=""></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+
+{% endblock content %}
