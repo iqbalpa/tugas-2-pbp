@@ -13,6 +13,9 @@ def show_todolist(request):
     context = { "username":username }
     return render(request, "todolist.html", context)
 
+def create_task(request):
+    return render(request, "create_task.html")
+
 def registrasi_user(request):
     form = UserCreationForm()
     if request.method == "POST":
