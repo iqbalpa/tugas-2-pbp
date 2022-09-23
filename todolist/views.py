@@ -1,19 +1,30 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
+from todolist.models import Task
+
 # Create your views here.
 def show_todolist(request):
     username = None
+    todolist_data = Task.objects.all()
     # if request.user.is_authenticated():
     #     username = request.user.username
-    context = { "username":username }
+    context = { 
+        "username": username,
+        "todolist": todolist_data
+    }
     return render(request, "todolist.html", context)
 
 def create_task(request):
+    if request.method == "POST":
+        judul = request.POST.get("judul")
+        deskripsi = request.POST.get("deskripsi")
+        user = request.user
+        new_task = Task(user=user, title=judul, description=deskripsi)
+        new_task.save()
     return render(request, "create_task.html")
 
 def registrasi_user(request):
