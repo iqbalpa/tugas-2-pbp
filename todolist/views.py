@@ -8,10 +8,8 @@ from todolist.models import Task
 
 # Create your views here.
 def show_todolist(request):
-    username = None
+    username = request.user.username
     todolist_data = Task.objects.all()
-    # if request.user.is_authenticated():
-    #     username = request.user.username
     context = { 
         "username": username,
         "todolist": todolist_data
@@ -34,7 +32,7 @@ def registrasi_user(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Registration successful")
-            return redirect("todolist:login")
+            return redirect("login_user")
     context = {"form":form}
     return render(request, "registration.html", context)
 
@@ -45,10 +43,10 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("todolist:show_todolist")
+            return redirect("show_todolist")
     context = {}
     return render(request, "login.html", context)
 
 def logout_user(request):
     logout(request)
-    return redirect("todolist:login")
+    return redirect("login_user")
