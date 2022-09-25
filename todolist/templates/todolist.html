@@ -15,6 +15,13 @@
         <th>Deskripsi</th>
         <th>Tanggal Pembuatan</th>
     </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.date}}</td>
+    </tr>
+    {% endfor %}
   </table>
 
  {% endblock content %}

@@ -3,26 +3,36 @@ from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from datetime import datetime 
 
 from todolist.models import Task
 
 # Create your views here.
+@login_required(login_url="/todolist/login")
 def show_todolist(request):
     username = request.user.username
-    todolist_data = Task.objects.all()
+    tasks = Task.objects.all()
     context = { 
         "username": username,
-        "todolist": todolist_data
+        "todolist": tasks
     }
     return render(request, "todolist.html", context)
 
+# masih belum bisa get data dari HTML
+@login_required(login_url="/todolist/login")
 def create_task(request):
+    print(request.POST)
+    print(request.user.id)
+    print(request.POST.get("judul"))
+    print(request.POST.get("deskripsi"))
+
     if request.method == "POST":
         judul = request.POST.get("judul")
         deskripsi = request.POST.get("deskripsi")
-        user = request.user
-        new_task = Task(user=user, title=judul, description=deskripsi)
-        new_task.save()
+        newTask = Task(user=request.user, title=judul, description=deskripsi, date=datetime.now())
+        newTask.save()
+        return redirect("show_todolist")
     return render(request, "create_task.html")
 
 def registrasi_user(request):

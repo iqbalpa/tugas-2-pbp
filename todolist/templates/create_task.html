@@ -3,28 +3,19 @@
 {% block content %}
 
 <div class = "login">
-
     <h1>Tambah Task Baru</h1>
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Judul: </td>
-                <td><input type="text" name="judul" placeholder="Judul" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Deskripsi: </td>
-                <td><input type="text" name="deksripsi" placeholder="Deskripsi" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Tambah"></td>
-            </tr>
-        </table>
+        <div>
+            <label for="judul">Judul: </label>
+            <input id="judul" type="text" name="judul" placeholder="Judul" required>
+        </div>
+        <div>
+            <label for="deskripsi">Deskripsi: </label>
+            <input id="deskripsi" type="text" name="deskripsi" placeholder="Deskripsi" required>
+        </div>
+        <input type="submit" value="Tambah">
     </form>
-
 </div>
 
 {% endblock content %}
