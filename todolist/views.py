@@ -12,8 +12,8 @@ from todolist.models import Task
 @login_required(login_url="/todolist/login")
 def show_todolist(request):
     username = request.user.username
-    tasks = Task.objects.all()
-    print(tasks)
+    user_id = request.user.id
+    tasks = Task.objects.filter(user_id=user_id)
     context = { 
         "username": username,
         "todolist": tasks
@@ -28,12 +28,6 @@ def create_task(request):
         deskripsi = request.POST.get("deskripsi")
         newTask = Task(user=request.user, title=judul, description=deskripsi, date=datetime.now())
         newTask.save()
-        # Task.objects.create(
-        #     user=request.user,
-        #     title=judul,
-        #     description=deskripsi,
-        #     date=datetime.now()
-        # )
         return redirect("show_todolist")
     return render(request, "create_task.html")
 
