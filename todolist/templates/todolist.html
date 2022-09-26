@@ -28,10 +28,12 @@
       {% else %}
         <td>Selesai</td>
       {% endif %}
-
+      
       <td>
-        <form method="PUT">
-          <input type="submit" name="status" value="yeay selesai" >
+        <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{task.id}}">
+          <button type="submit">yeayyyy</button>
         </form>
       </td>
     </tr>

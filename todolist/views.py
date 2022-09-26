@@ -11,6 +11,16 @@ from todolist.models import Task
 # Create your views here.
 @login_required(login_url="/todolist/login")
 def show_todolist(request):
+    if request.method == "POST":
+        task_id = request.POST.get("id")
+        task = Task.objects.get(id=task_id)
+        if task.is_finished:
+            task.is_finished = False
+        else:
+            task.is_finished = True
+        task.save()
+        return redirect("show_todolist")
+        
     username = request.user.username
     user_id = request.user.id
     tasks = Task.objects.filter(user_id=user_id)
@@ -20,7 +30,6 @@ def show_todolist(request):
     }
     return render(request, "todolist.html", context)
 
-# masih belum bisa get data dari HTML
 @login_required(login_url="/todolist/login")
 def create_task(request):
     if request.method == "POST":
@@ -56,3 +65,12 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect("login_user")
+
+def click_button(request, id):
+    task = Task.objects.get(id=id)
+    if task.is_finished:
+        task.is_finished = False
+    else:
+        task.is_finished = True
+    task.save()
+    return render(request, "todolist.html")
