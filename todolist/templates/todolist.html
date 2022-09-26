@@ -14,12 +14,26 @@
         <th>Judul</th>
         <th>Deskripsi</th>
         <th>Tanggal Pembuatan</th>
+        <th>Status Penyelesaian</th>
+        <th>Perbarui Status</th>
     </tr>
     {% for task in todolist %}
     <tr>
-        <td>{{task.title}}</td>
-        <td>{{task.description}}</td>
-        <td>{{task.date}}</td>
+      <td>{{task.title}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.date}}</td>
+
+      {% if task.is_finished == False %}
+        <td>Belum selesai</td>
+      {% else %}
+        <td>Selesai</td>
+      {% endif %}
+
+      <td>
+        <form method="PUT">
+          <input type="submit" name="status" value="yeay selesai" >
+        </form>
+      </td>
     </tr>
     {% endfor %}
   </table>
