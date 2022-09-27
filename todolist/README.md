@@ -9,6 +9,8 @@
 
 
 ## Kegunaan `{% csrf_token %}` pada elemen `<form>` dan apa yang terjadi apabila tidak ada potongan kode tersebut?
+- *csrf_token* berguna untuk melindungi semua data dari form yang menggunakan method POST dari *breach attacks*. 
+- apabila tidak menggunakan *csrf_token* pada `<form>`, *attacker* dapat dengan mudah menggunakan *authenticated state* seorang user untuk mengirimkan *request* yang tidak sesuai dengan keinginan user. Dan apabila *attack* sukses pada akun admin, hal itu dapat membahayakan seluruh *web app*
 
 ## Apakah dapat membuat elemen `<form>` secara manual? 
 Tentu saja hal itu dapat dilakukan. 
@@ -25,3 +27,11 @@ Tentu saja hal itu dapat dilakukan.
 - Di template HTML akan dilakukan iterasi pada *todolist* tersebut dan ditampilkan sebagai satu todolist satu kolom pada tabel
 
 ## Jelaskan bagaimana cara mengimplementasikan checklist di atas
+- pembuatan django app todolist dengan perintah `python manage.py startapp todolist` 
+- menambahkan `path('', include('todolist.urls'))` pada *urls.py* di *project_django*
+- Membuat **Task** class pada models.py dengan field user, date, title, dan description
+- membuat form registrasi menggunakan UserCreationForm() di views.py. kemudian membuat fungsi pada views.py untuk login dan logout yang diintegrasikan dengan form pada html dengan method POST
+- mengimplementasikan fungsi untuk membuat task baru pada main function di `show_todolist` dengan argumen user, title, description, date dengan cara membuat object baru dari class **Task** dan menyimpannya ke database
+- Membuat form untuk pembuatan task secara manual di folder templates (tanpa menggunakan forms.py) dengan menggunakan method POST
+- Membuat routing pada todolist/urls.py sesuai requirements menggunakan function yang sesuai dari views.py
+- Melakukan deployment ke Heroku menggunakan Repository dari GitHub. Kemudian membuat 2 akun dummy beserta 3 dummy data pada website hasil deployment tersebut
