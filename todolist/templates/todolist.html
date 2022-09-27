@@ -31,12 +31,16 @@
           <td>Selesai</td>
         {% endif %}
         
-        <td>
+        <!-- <td>
           <form method="POST">
             {% csrf_token %}
             <input type="hidden" name="id" value="{{task.id}}">
             <button type="submit">yeayyyy</button>
           </form>
+        </td> -->
+
+        <td>
+          <a href="update/{{task.pk}}"><button>Yeayyyy</button></a>
         </td>
 
         <td>

@@ -12,16 +12,6 @@ from todolist.models import Task
 # Create your views here.
 @login_required(login_url="/todolist/login")
 def show_todolist(request):
-    if request.method == "POST":
-        task_id = request.POST.get("id")
-        task = Task.objects.get(id=task_id)
-        if task.is_finished:
-            task.is_finished = False
-        else:
-            task.is_finished = True
-        task.save()
-        return redirect("todolist:show_todolist")
-        
     username = request.user.username
     user_id = request.user.id
     tasks = Task.objects.filter(user_id=user_id)
@@ -67,14 +57,14 @@ def logout_user(request):
     logout(request)
     return redirect("todolist:login_user")
 
-# def click_button(request, id):
-#     task = Task.objects.get(id=id)
-#     if task.is_finished:
-#         task.is_finished = False
-#     else:
-#         task.is_finished = True
-#     task.save()
-#     return render(request, "todolist.html")
+def update_task(request, id):
+    task = Task.objects.get(pk=id)
+    if task.is_finished:
+        task.is_finished = False
+    else:
+        task.is_finished = True
+    task.save()
+    return HttpResponseRedirect("/todolist/")
 
 def delete_task(request, id):
     task = Task.objects.get(pk=id)
