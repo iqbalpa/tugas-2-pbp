@@ -5,8 +5,8 @@
   <h1>Tugas 4 PBP</h1>
   <h3>Hi! Welcome {{username}}</h3>
 
-  <a href="{% url 'logout_user' %}"><button>Logout</button></a>
-  <a href="{% url 'create_task' %}"><button>Tambah Task Baru</button></a>
+  <a href="{% url 'todolist:logout_user' %}"><button>Logout</button></a>
+  <a href="{% url 'todolist:create_task' %}"><button>Tambah Task Baru</button></a>
 
   <h2>TASKS</h2>
   <table>
@@ -16,27 +16,34 @@
         <th>Tanggal Pembuatan</th>
         <th>Status Penyelesaian</th>
         <th>Perbarui Status</th>
+        <th>Hapus Task</th>
     </tr>
-    {% for task in todolist %}
-    <tr>
-      <td>{{task.title}}</td>
-      <td>{{task.description}}</td>
-      <td>{{task.date}}</td>
 
-      {% if task.is_finished == False %}
-        <td>Belum selesai</td>
-      {% else %}
-        <td>Selesai</td>
-      {% endif %}
-      
-      <td>
-        <form method="POST">
-          {% csrf_token %}
-          <input type="hidden" name="id" value="{{task.id}}">
-          <button type="submit">yeayyyy</button>
-        </form>
-      </td>
-    </tr>
+    {% for task in todolist %}
+      <tr>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.date}}</td>
+
+        {% if task.is_finished == False %}
+          <td>Belum selesai</td>
+        {% else %}
+          <td>Selesai</td>
+        {% endif %}
+        
+        <td>
+          <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{task.id}}">
+            <button type="submit">yeayyyy</button>
+          </form>
+        </td>
+
+        <td>
+          <a href="delete/{{task.pk}}"><button>Hapus Task</button></a>
+        </td>
+
+      </tr>
     {% endfor %}
   </table>
 
