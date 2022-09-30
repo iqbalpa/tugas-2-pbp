@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 
- {% block content %}
+{% block content %}
+<div class="h-screen w-screen flex flex-col justify-between items-center">
 
-  <div class="absolute p-5 h-14 flex flex-row justify-between items-center w-screen bg-[#a7bed3] top-0">
+  <div class="text-white p-5 h-14 flex flex-row justify-between items-center w-screen bg-slate-700">
     <h1 class="text-2xl font-bold">TUGAS PBP</h1>
-    <div class="flex flex-row items-center">
-      <a href="{% url 'todolist:create_task' %}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer h-10 w-28 rounded-lg">New Task</button></a>
-      <a href="{% url 'todolist:logout_user' %}"><button class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-10 w-28 rounded-lg">Logout</button></a>
+    <div class="flex flex-row items-center font-semibold">
+      <a href="{% url 'todolist:create_task' %}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer px-4 py-2 rounded-lg">New Task</button></a>
+      <a href="{% url 'todolist:logout_user' %}"><button class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer px-4 py-2 rounded-lg">Logout</button></a>
     </div>
   </div>
-  <h1 class="absolute top-16 left-4 text-xl font-semibold">Hi! Welcome {{username}}</h1>
-  <div class="bg-zinc-500 p-5 rounded-xl">
+  
+  <h1 class="my-1 text-center text-xl font-semibold">Hi! Welcome {{username}}</h1>
+
+  <div class="mb-3 grid grid-flow-col grid-rows-4 grid-cols-2 gap-5 p-5 rounded-xl">
     {% for task in todolist %}
-      <div class="text-white hover:scale-105 duration-150 flex flex-row justify-between m-2 p-3 w-[30rem] h-24 bg-zinc-800 box-shadow-md rounded-xl">
+      <div class="text-white hover:scale-105 duration-150 flex flex-row justify-between p-3 w-[30rem] h-24 bg-zinc-800 box-shadow-md rounded-xl">
           <div>
           <h2 class="font-semibold text-md">{{task.title}}</h2>
           <h3 class="text-sm text-gray-500">{{task.description}}</h3>
@@ -24,53 +27,12 @@
           {% endif %}
         </div>
         <div class="flex flex-col text-sm">
-          <a href="update/{{task.pk}}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer h-7 w-20 rounded-lg">Update</button></a>
-          <a href="delete/{{task.pk}}"><button class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-7 w-20 rounded-lg">Delete</button></a>
+          <a href="update/{{task.pk}}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer h-7 w-20 rounded-md">Update</button></a>
+          <a href="delete/{{task.pk}}"><button class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-7 w-20 rounded-md">Delete</button></a>
         </div>
       </div>
     {% endfor %}
   </div>
 
-
-  <!-- <h1>Tugas 4 PBP</h1>
-  <h3>Hi! Welcome {{username}}</h3>
-
-  <a href="{% url 'todolist:logout_user' %}"><button>Logout</button></a>
-  <a href="{% url 'todolist:create_task' %}"><button>Tambah Task Baru</button></a>
-
-  <h2>TASKS</h2>
-  <table>
-    <tr>
-        <th>Judul</th>
-        <th>Deskripsi</th>
-        <th>Tanggal Pembuatan</th>
-        <th>Status Penyelesaian</th>
-        <th>Perbarui Status</th>
-        <th>Hapus Task</th>
-    </tr>
-
-    {% for task in todolist %}
-      <tr>
-        <td>{{task.title}}</td>
-        <td>{{task.description}}</td>
-        <td>{{task.date}}</td>
-
-        {% if task.is_finished == False %}
-          <td>Belum selesai</td>
-        {% else %}
-          <td>Selesai</td>
-        {% endif %}
-        
-        <td>
-          <a href="update/{{task.pk}}"><button>Yeayyyy</button></a>
-        </td>
-
-        <td>
-          <a href="delete/{{task.pk}}"><button>Hapus Task</button></a>
-        </td>
-
-      </tr>
-    {% endfor %}
-  </table> -->
-
- {% endblock content %}
+</div>
+{% endblock content %}
