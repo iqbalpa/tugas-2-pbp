@@ -6,27 +6,26 @@
 
 {% block content %}  
 
-<div class = "login">
+<div class="login flex flex-col justify-center items-center bg-[#a7bed3] p-5 rounded-xl">
     
-    <h1>Registration Form</h1>  
+    <h1 class="text-2xl font-bold mb-4">Registration Form</h1>  
 
-        <form method="POST" >  
+        <form method="POST">  
             {% csrf_token %}  
-            <table>  
+            <table class="flex flex-col justify-center items-center">  
                 {{ form.as_table }}  
-                <tr>  
+                <tr class="mt-2 flex flex-col justify-center items-center">  
                     <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
+                    <td><a href="{% url 'todolist:registrasi_user' %}"><input class="bg-red-500 hover:bg-red-700 hover:cursor-pointer h-10 w-32 rounded-lg"  type="submit" name="submit" value="Daftar"/></a></td>  
                 </tr>  
-            </table>  
-            <button><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
+            </table>
         </form>
 
     {% if messages %}  
         <ul>   
             {% for message in messages %}  
                 <li>{{ message }}</li>  
-                {% endfor %}  
+            {% endfor %}  
         </ul>   
     {% endif %}
 
