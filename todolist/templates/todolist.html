@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="h-screen w-screen flex flex-col justify-between items-center">
+<div class="relative h-screen w-screen flex flex-col justify-center items-center">
 
-  <div class="text-white p-5 h-14 flex flex-row justify-between items-center w-screen bg-slate-700">
+  <div class="absolute top-0 text-white p-5 h-14 flex flex-row justify-between items-center w-screen bg-slate-700">
     <h1 class="lg:text-2xl sm:text-xl font-bold">TUGAS PBP</h1>
     <div class="flex flex-row items-center font-semibold lg:scale-100 sm:scale-75">
       <a href="{% url 'todolist:create_task' %}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer px-4 py-2 rounded-lg">New Task</button></a>
@@ -11,9 +11,9 @@
     </div>
   </div>
   
-  <h1 class="my-1 text-center text-xl font-semibold">Hi! Welcome {{username}}</h1>
+  <h1 class="absolute top-16 mb-1 text-center text-xl font-semibold">Hi! Welcome {{username}}</h1>
 
-  <div class="mb-3 grid grid-flow-cols lg:grid-cols-2 sm:grid-cols-1 gap-5 p-5 rounded-xl">
+  <div class="absolute top-24 mb-3 grid grid-flow-cols lg:grid-cols-2 sm:grid-cols-1 gap-5 p-5 rounded-xl">
     {% for task in todolist %}
       <div class="text-white hover:scale-105 duration-150 flex flex-row justify-between p-3 lg:w-[30rem] sm:w-[25rem] h-24 bg-zinc-800 box-shadow-md rounded-xl">
           <div>
