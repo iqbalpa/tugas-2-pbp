@@ -61,7 +61,7 @@ Tentu saja hal itu dapat dilakukan.
 ## CSS selector
 1. id: menggunakan # sebagai tanda id pada HTML
 2. class: menggunakan . sebagai tanda class pada HTML
-3. *: untuk mendapatkan semua elemen pada HTML
+3. element: menggunakan nama tag HTML sebagai selector
 
 ## Implementasi checklist
 1. Menambahkan tag `<link>` pada base.html untuk menggunakan CDN dari tailwind css
