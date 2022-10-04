@@ -35,3 +35,39 @@ Tentu saja hal itu dapat dilakukan.
 - Membuat form untuk pembuatan task secara manual di folder templates (tanpa menggunakan forms.py) dengan menggunakan method POST
 - Membuat routing pada todolist/urls.py sesuai requirements menggunakan function yang sesuai dari views.py
 - Melakukan deployment ke Heroku menggunakan Repository dari GitHub. Kemudian membuat 2 akun dummy beserta 3 dummy data pada website hasil deployment tersebut
+
+
+# Tugas 5
+## Perbedaan Inline, Internal, dan External CSS
+1. Inline CSS: menggunakan atribut `style` pada tag HTML. Contoh: `<h1 style="color:blue;">Ini adalah contoh inline CSS</h1>`
+   - Kelebihan: dapat langsung digunakan pada tag HTML yang diinginkan, tidak perlu membuat file CSS terpisah
+   - Kekurangan: membuat struktur file HTML terlihat berantakan apabila menambahkan banyak styling
+2. Internal CSS: menggunakan tag `<style>` di dalam `<head>` HTML, kemudian menulis kode css di dalam tag `<style>` tersebut
+   - Kelebihan: tidak perlu membuat file CSS terpisah, bisa langsung menambahkan styling pada file HTML 
+   - Kekurangan: meningkatkan loading time pada website karena styling yang ditambahkan langsung pada file HTML
+3. External CSS: menggunakan tag `<link>` untuk menghubungkan file HTMl dengan file CSS yang terpisah
+   - Kelebihan: file HTML jadi lebih rapi, dapat menggunakan satu file CSS untuk banyak file HTML
+   - Kekurangan: laman website akan butuh waktu loading untuk me-load styling yang ada di file CSS
+
+## Tag HTML5
+1. `<header>`: header pada website
+2. `<nav>`: navigasi pada website
+3. `<section>`: section pada website
+4. `<article>`: article pada website
+5. `<footer>`: footer pada website
+6. `<main>`: main content pada website
+7. `<figcaption>`: caption sebuah figure
+
+## CSS selector
+1. id: menggunakan # sebagai tanda id pada HTML
+2. class: menggunakan . sebagai tanda class pada HTML
+3. *: untuk mendapatkan semua elemen pada HTML
+
+## Implementasi checklist
+1. Menambahkan tag `<link>` pada base.html untuk menggunakan CDN dari tailwind css
+![image](./assets/satu.png)
+2. Menambahkan styling sekaligua membuatnya responsive pada file html untuk registrasi, login, todolist, dan create_task
+![image](./assets/dua-a.png)
+![image](./assets/dua-b.png)
+![image](./assets/dua-c.png)
+![image](./assets/dua-d.png)
