@@ -8,6 +8,8 @@ from django.http import HttpResponseRedirect
 from datetime import datetime 
 
 from todolist.models import Task
+from django.http import HttpResponse
+from django.core import serializers
 
 # Create your views here.
 @login_required(login_url="/todolist/login")
@@ -70,3 +72,18 @@ def delete_task(request, id):
     task = Task.objects.get(pk=id)
     task.delete()
     return HttpResponseRedirect("/todolist/")
+
+
+# Tugas 6
+@login_required(login_url="/todolist/login")
+def show_todolist_json(request):
+    tasks = Task.objects.all()
+    return HttpResponse(serializers.serialize('json', tasks), content_type='application/json')
+
+def add_task(request):
+    if request.method == "POST":
+        judul = request.POST.get('title')
+        deskripsi = request.POST.get('description')
+        new_task = Task(user=request.user, title=judul, description=deskripsi, date=datetime.now())
+        new_task.save()
+    return redirect('/todolist')
