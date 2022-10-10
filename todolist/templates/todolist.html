@@ -45,28 +45,6 @@
   
   <h1 class="absolute top-16 mb-1 text-center text-xl font-semibold">Hi! Welcome {{username}}</h1>
 
-  <!-- GET DATA FROM DJANGO VIEWS -->
-  <!-- <div class="content absolute top-24 mb-3 grid grid-flow-cols lg:grid-cols-2 sm:grid-cols-1 gap-5 p-5 rounded-xl">
-    {% for task in todolist %}
-      <div class="text-white hover:scale-105 duration-150 flex flex-row justify-between p-3 lg:w-[30rem] sm:w-[25rem] h-24 bg-zinc-800 box-shadow-md rounded-xl">
-          <div>
-          <h2 class="font-semibold lg:text-md sm:text-sm">{{task.title}}</h2>
-          <h3 class="lg:text-sm sm:text-xs text-gray-500">{{task.description}}</h3>
-          <p class="text-xs text-gray-500">created: {{task.date}}</p>
-          {% if task.is_finished%}
-            <p class="text-xs font-semibold text-blue-500">Selesai</p>
-          {% else %}
-            <p class="text-xs font-semibold text-red-500">Belum Selesai</p>
-          {% endif %}
-        </div>
-        <div class="flex flex-col text-sm lg:scale-100 sm:scale-60">
-          <a href="update/{{task.pk}}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer h-7 w-20 rounded-md">Update</button></a>
-          <a href="delete/{{task.pk}}"><button class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-7 w-20 rounded-md">Delete</button></a>
-        </div>
-      </div>
-    {% endfor %}
-  </div> -->
-
   <div class="content absolute top-24 mb-3 grid grid-flow-cols lg:grid-cols-2 sm:grid-cols-1 gap-5 p-5 rounded-xl"></div>
 
   <form method="POST" class="modal flex flex-col justify-center items-center z-20 w-[30rem] h-[20rem] bg-gray-100 outline-2 shadow-2xl rounded-xl hover:scale-105 duration-150">
