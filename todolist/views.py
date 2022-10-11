@@ -77,7 +77,7 @@ def delete_task(request, id):
 # Tugas 6
 @login_required(login_url="/todolist/login")
 def show_todolist_json(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', tasks), content_type='application/json')
 
 def add_task(request):
@@ -86,4 +86,3 @@ def add_task(request):
         deskripsi = request.POST.get('description')
         new_task = Task(user=request.user, title=judul, description=deskripsi, date=datetime.now())
         new_task.save()
-    return redirect('/todolist')

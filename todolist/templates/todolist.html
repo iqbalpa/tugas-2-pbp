@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block meta %}
+<!-- get data from /todolist/json -->
 <script>
   $(document).ready(function(){
     $('.modal').hide();
+    $('.backdrop').hide();
     $.get('/todolist/json/', function(data, status){
       let content = '';
       for (let i=0; i<data.length; i++){
@@ -34,6 +36,7 @@
 {% block content %}
 <div class="relative h-screen w-screen flex flex-col justify-center items-center">
 
+  <!-- header -->
   <div class="absolute top-0 text-white p-5 h-14 flex flex-row justify-between items-center w-screen bg-slate-700">
     <h1 class="lg:text-2xl sm:text-xl font-bold">TUGAS PBP</h1>
     <div class="flex flex-row items-center font-semibold lg:scale-100 sm:scale-75">
@@ -45,9 +48,14 @@
   
   <h1 class="absolute top-16 mb-1 text-center text-xl font-semibold">Hi! Welcome {{username}}</h1>
 
+  <!-- todolist contents -->
   <div class="content absolute top-24 mb-3 grid grid-flow-cols lg:grid-cols-2 sm:grid-cols-1 gap-5 p-5 rounded-xl"></div>
 
-  <form method="POST" class="modal flex flex-col justify-center items-center z-20 w-[30rem] h-[20rem] bg-gray-100 outline-2 shadow-2xl rounded-xl hover:scale-105 duration-150">
+  <!-- backdrop modals -->
+  <div class="backdrop mt-14 h-[100vh] w-[100vw] bg-red-100 z-10 opacity-80"></div>
+
+  <!-- modals -->
+  <form method="POST" class="modal absolute flex flex-col justify-center items-center z-20 w-[30rem] h-[20rem] bg-gray-100 outline-2 shadow-2xl rounded-xl hover:scale-105 duration-150">
     {% csrf_token %}
     <h1 class="text-2xl font-bold mb-4">ADD NEW TASK</h1>
     <div class="flex flex-col m-1">
@@ -63,14 +71,17 @@
 
 </div>
 
-
+<!-- click add task button -->
 <script>
   $(document).ready( function(){
     $('.add-task').click( function(){
       $('.modal').toggle();
+      $('.backdrop').toggle();
     })
   })
 </script>
+
+<!-- click add task button in modal -->
 <script>
   $(document).ready( function(){
     $('.add-task-button').click( function(){
@@ -83,7 +94,18 @@
         csrfmiddlewaretoken: CSRFtoken
       }, function(){
         $('.modal').hide();
+        $('.backdrop').hide();
       })
+    })
+  })
+</script>
+
+<!-- click modals backdrop -->
+<script>
+  $(document).ready( function(){
+    $('.backdrop').click( function(){
+      $('.modal').hide();
+      $('.backdrop').hide();
     })
   })
 </script>
