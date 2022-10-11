@@ -55,7 +55,7 @@
   <div class="backdrop mt-14 h-[100vh] w-[100vw] bg-red-100 z-10 opacity-80"></div>
 
   <!-- modals -->
-  <form method="POST" class="modal absolute flex flex-col justify-center items-center z-20 w-[30rem] h-[20rem] bg-gray-100 outline-2 shadow-2xl rounded-xl hover:scale-105 duration-150">
+  <div class="modal absolute flex flex-col justify-center items-center z-20 w-[30rem] h-[20rem] bg-gray-100 outline-2 shadow-2xl rounded-xl hover:scale-105 duration-150">
     {% csrf_token %}
     <h1 class="text-2xl font-bold mb-4">ADD NEW TASK</h1>
     <div class="flex flex-col m-1">
@@ -67,7 +67,7 @@
       <input class="deskripsi w-[17rem] p-2 rounded-lg border-[1px] border-black" placeholder="deskripsi" required>
     </div>
     <button class="add-task-button m-3 bg-green-500 hover:bg-green-700 hover:cursor-pointer px-6 py-2 rounded-lg">ADD</button>
-  </form>
+  </div>
 
 </div>
 
@@ -95,6 +95,28 @@
       }, function(){
         $('.modal').hide();
         $('.backdrop').hide();
+        $.get('/todolist/json/', function(data, status){
+          let content = '';
+          for (let i=0; i<data.length; i++){
+            let message = data[i].fields.is_finished ? 'Selesai':'Belum Selesai';
+            let color = data[i].fields.is_finished ? 'blue':'red';
+            content += `
+              <div class="text-white hover:scale-105 duration-150 flex flex-row justify-between p-3 lg:w-[30rem] sm:w-[25rem] h-24 bg-zinc-800 box-shadow-md rounded-xl">
+                  <div>
+                  <h2 class="font-semibold lg:text-md sm:text-sm">${data[i].fields.title}</h2>
+                  <h3 class="lg:text-sm sm:text-xs text-gray-500">${data[i].fields.description}</h3>
+                  <p class="text-xs text-gray-500">created: ${data[i].fields.date}</p>
+                  <p class="text-xs font-semibold text-${color}-500">${message}</p>
+                </div>
+                <div class="flex flex-col text-sm lg:scale-100 sm:scale-60">
+                  <a href="update/${data[i].pk}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer h-7 w-20 rounded-md">Update</button></a>
+                  <a href="delete/${data[i].pk}"><button class="m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-7 w-20 rounded-md">Delete</button></a>
+                </div>
+              </div>
+            `;
+            $('.content').html(content);
+          }
+        })
       })
     })
   })

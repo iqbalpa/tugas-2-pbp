@@ -86,3 +86,4 @@ def add_task(request):
         deskripsi = request.POST.get('description')
         new_task = Task(user=request.user, title=judul, description=deskripsi, date=datetime.now())
         new_task.save()
+    return HttpResponse('')
