@@ -46,33 +46,6 @@
 			$(".content").html(content);
 		});
 	});
-	// click add task button to show modal
-	$(".add-task").click(function () {
-		$(".modal").toggle();
-		$(".backdrop").toggle();
-	});
-	// click add task button in modal
-	$(".add-task-button").click(function () {
-		let judul = $(".judul").val();
-		let deskripsi = $(".deskripsi").val();
-		let CSRFtoken = $('input[name="csrfmiddlewaretoken"]').val();
-		$.post(
-			"/todolist/add/",
-			{
-				title: judul,
-				description: deskripsi,
-				csrfmiddlewaretoken: CSRFtoken,
-			},
-			function () {
-				$(".modal").hide();
-				$(".backdrop").hide();
-				$.get("/todolist/json/", function (data, status) {
-					let content = getData(data);
-					$(".content").html(content);
-				});
-			}
-		);
-	});
 	// click backdrop modal to hide modal
 	$(".backdrop").click(function () {
 		$(".modal").hide();
@@ -120,4 +93,37 @@
 		<button class="add-task-button m-3 bg-green-500 hover:bg-green-700 hover:cursor-pointer px-6 py-2 rounded-lg">ADD</button>
 	</div>
 </div>
+
+<script>
+	$(dcoument).ready(function () {
+		// click add task button to show modal
+		$(".add-task").click(function () {
+			$(".modal").toggle();
+			$(".backdrop").toggle();
+		});
+	});
+
+	// click add task button in modal
+	$(".add-task-button").click(function () {
+		let judul = $(".judul").val();
+		let deskripsi = $(".deskripsi").val();
+		let CSRFtoken = $('input[name="csrfmiddlewaretoken"]').val();
+		$.post(
+			"/todolist/add/",
+			{
+				title: judul,
+				description: deskripsi,
+				csrfmiddlewaretoken: CSRFtoken,
+			},
+			function () {
+				$(".modal").hide();
+				$(".backdrop").hide();
+				$.get("/todolist/json/", function (data, status) {
+					let content = getData(data);
+					$(".content").html(content);
+				});
+			}
+		);
+	});
+</script>
 {% endblock content %}
