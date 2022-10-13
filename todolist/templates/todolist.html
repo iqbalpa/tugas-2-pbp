@@ -15,7 +15,7 @@
 				</div>
 				<div class="flex flex-col text-sm lg:scale-100 sm:scale-60">
 					<a href="update/${item.pk}"><button class="m-1 bg-blue-500 hover:bg-blue-700 hover:cursor-pointer h-7 w-20 rounded-md">Update</button></a>
-					<button id="${item.pk}" class="delete-button m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-7 w-20 rounded-md">Delete</button>
+					<button onClick="deleteData(${item.pk})" class="delete-button m-1 bg-red-500 hover:bg-red-700 hover:cursor-pointer h-7 w-20 rounded-md">Delete</button>
 				</div>
 			</div>
 			`;
@@ -105,6 +105,8 @@
 			postData(judul, deskripsi);
 			$(".modal").hide();
 			$(".backdrop").hide();
+			document.getElementById("judul").value = "";
+			document.getElementById("deskripsi").value = "";
 		});
 	});
 </script>
@@ -117,16 +119,13 @@
 				"X-CSRFToken": csrftoken,
 			},
 			method: "DELETE",
-		});
+		}).then(
+			$.get("/todolist/json/", function (data, status) {
+				let result = getData(data);
+				$(".content").html(result);
+			})
+		);
 	};
-
-	$(document).ready(function () {
-		$("button.delete-button").click(function () {
-			alert("button clicked");
-			let id = $(this).attr("id");
-			deleteData(id);
-		});
-	});
 </script>
 
 {% endblock content %}
